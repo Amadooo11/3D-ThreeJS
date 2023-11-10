@@ -1,0 +1,178 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+.configurator {
+  position: fixed;
+  bottom: 0; /* Move the configurator to the bottom */
+  width: 100%; /* Occupy the entire width */
+  padding: 20px;
+  flex-direction: column; /* Change to a column layout */
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Add a background color */
+  color: rgb(0, 0, 0); /* Text color */
+}
+
+
+.configurator__section__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+.configurator__section__values {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+  text-align: center; 
+}
+
+.item:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.item__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: solid 2px #999999;
+  padding: 9px;
+}
+
+.item.item--active .item__dot {
+  border: solid 2px white;
+}
+
+.item__label {
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.item.item--active .item__label {
+  color: rgb(255, 0, 0);
+}
+/* CustomLoadingScreen.css */
+.custom-loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.custom-loading-screen.visible {
+  opacity: 1;
+}
+
+.custom-loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction when hidden */
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.done-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add any other styles you need */
+
+.back-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* App.css or your CSS file */
+
+/* App.css or your CSS file */
+
+/* Center the loading screen and its contents */
+.loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* Background color for the loading screen */
+  z-index: 9999; /* Ensure it's on top */
+}
+
+/* Style for the logo or loading image */
+.loading-image {
+  max-width: 100px; /* Adjust the size as needed */
+  max-height: 100px; /* Adjust the size as needed */
+}
+
+/* Media query to center the loading screen in mobile view */
+@media (max-width: 768px) {
+  .loading-screen {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loading-image {
+    max-width: 80px; /* Adjust the size for mobile view */
+    max-height: 80px; /* Adjust the size for mobile view */
+  }
+}
+
+
